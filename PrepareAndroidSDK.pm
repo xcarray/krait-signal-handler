@@ -418,6 +418,10 @@ sub PrepareNDK
 		my $current = $content[0];
 		print "\tCurrently installed = " . $current . "\n";
 
+		# remove the possible '(64-bit)' from the end
+		my @curr_arr = split(' ', $current);
+		$current = $curr_arr[0];
+		
 		if ($ndk eq $current)
 		{
 			print "\tNDK '$ndk' is already installed\n";
