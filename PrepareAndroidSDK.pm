@@ -133,6 +133,30 @@ our $ndks =
 						"macosx" => "android-ndk-r9-darwin-x86.tar.bz2",
 						"linux" => "android-ndk-r9-linux-x86.tar.bz2",
 					},
+	"r13b"		=>
+					{
+						"windows" => "android-ndk-13b-windows-x86_64.zip",
+						"macosx" => "android-ndk-r13b-darwin-x86_64.zip",
+						"linux" => "android-ndk-r13b-linux-x86_64.zip",
+					},
+};
+
+our $ndk_base_urls =
+{
+	"r5"	=> $BASE_URL_NDK,
+	"r5b"	=> $BASE_URL_NDK,
+	"r5c"	=> $BASE_URL_NDK,
+	"r6"	=> $BASE_URL_NDK,
+	"r6b"	=> $BASE_URL_NDK,
+	"r7"	=> $BASE_URL_NDK,
+	"r7b"	=> $BASE_URL_NDK,
+	"r7c"	=> $BASE_URL_NDK,
+	"r8"	=> $BASE_URL_NDK,
+	"r8b"	=> $BASE_URL_NDK,
+	"r8c"	=> $BASE_URL_NDK,
+	"r8e"	=> $BASE_URL_NDK,
+	"r9"	=> $BASE_URL_NDK,
+	"r13b"	=> $BASE_URL_SDK,
 };
 
 our ($HOST_ENV, $TMP, $HOME, $WINZIP);
@@ -444,7 +468,7 @@ sub PrepareNDK
 	die ("Unknown NDK release '$ndk' (for $HOST_ENV)") if (!$archive);
 
 	print "\tDownloading '$ndk' to '$ndk_root'\n";
-	DownloadAndUnpackArchive($BASE_URL_NDK . $archive, $ndk_root);
+	DownloadAndUnpackArchive($ndk_base_urls->{$ndk} . $archive, $ndk_root);
 }
 
 1;
