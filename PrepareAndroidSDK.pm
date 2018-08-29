@@ -139,6 +139,12 @@ our $ndks =
 						"macosx" => "android-ndk-r13b-darwin-x86_64.zip",
 						"linux" => "android-ndk-r13b-linux-x86_64.zip",
 					},
+	"r16b"		=>
+					{
+						"windows" => "android-ndk-16b-windows-x86_64.zip",
+						"macosx" => "android-ndk-r16b-darwin-x86_64.zip",
+						"linux" => "android-ndk-r16b-linux-x86_64.zip",
+					},
 };
 
 our $ndk_base_urls =
@@ -157,6 +163,7 @@ our $ndk_base_urls =
 	"r8e"	=> $BASE_URL_NDK,
 	"r9"	=> $BASE_URL_NDK,
 	"r13b"	=> $BASE_URL_SDK,
+	"r16b"	=> $BASE_URL_SDK,
 };
 
 our ($HOST_ENV, $TMP, $HOME, $WINZIP);
